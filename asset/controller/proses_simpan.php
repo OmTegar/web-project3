@@ -14,7 +14,7 @@ $tmp = $_FILES['foto']['tmp_name'];
 $fotobaru = date('dmYHis').$foto;
 
 // Set path folder tempat menyimpan fotonya
-$path = "../../../../../mnt/efs/fs1/images/".$fotobaru;
+$path = "../images/".$fotobaru;
 
 // Proses upload
 if(move_uploaded_file($tmp, $path)){ // Cek apakah gambar berhasil diupload atau tidak

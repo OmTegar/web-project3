@@ -64,7 +64,7 @@ include 'asset/koneksi.php';
 						</td>
 						<td>
 							<center>
-								<?php echo "<img src='../../../mnt/efs/fs1/images/" . $data['foto'] . "' width='100' height='140' >" ?>
+								<?php echo "<img src='/asset/images/" . $data['foto'] . "' width='100' height='140' >" ?>
 							</center>
 						</td>
 						<td>

@@ -11,8 +11,8 @@ $sql = mysqli_query($connect, $query); // Eksekusi/Jalankan query dari variabel 
 $data = mysqli_fetch_array($sql); // Ambil data dari hasil eksekusi $sql
 
 // Cek apakah file fotonya ada di folder images
-if(is_file("../../../../../mnt/efs/fs1/images/".$data['foto'])) // Jika foto ada
-	unlink("../../../../../mnt/efs/fs1/images/".$data['foto']); // Hapus foto yang telah diupload dari folder images
+if(is_file("../images/".$data['foto'])) // Jika foto ada
+	unlink("../images/".$data['foto']); // Hapus foto yang telah diupload dari folder images
 
 // Query untuk menghapus data siswa berdasarkan NIS yang dikirim
 $query2 = "DELETE FROM users WHERE id='".$id."'";

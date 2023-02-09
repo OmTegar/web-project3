@@ -20,7 +20,7 @@ if(isset($_POST['ubah_foto'])){ // Jika user menceklis checkbox yang ada di form
 	$fotobaru = date('dmYHis').$foto;
 	
 	// Set path folder tempat menyimpan fotonya
-	$path = "../../../../../mnt/efs/fs1/images/".$fotobaru;
+	$path = "../images/".$fotobaru;
 
 	// Proses upload
 	if(move_uploaded_file($tmp, $path)){ // Cek apakah gambar berhasil diupload atau tidak
@@ -30,8 +30,8 @@ if(isset($_POST['ubah_foto'])){ // Jika user menceklis checkbox yang ada di form
 		$data = mysqli_fetch_array($sql); // Ambil data dari hasil eksekusi $sql
 
 		// Cek apakah file foto sebelumnya ada di folder images
-		if(is_file("../../../../../mnt/efs/fs1/images/".$data['foto'])) // Jika foto ada
-			unlink("../../../../../mnt/efs/fs1/images/".$data['foto']); // Hapus file foto sebelumnya yang ada di folder images
+		if(is_file("../images/".$data['foto'])) // Jika foto ada
+			unlink("../images/".$data['foto']); // Hapus file foto sebelumnya yang ada di folder images
 		
 		// Proses ubah data ke Database
 		$query = "UPDATE users SET nama='".$nama."', absen='".$absen."', kelas='".$kelas."', foto='".$fotobaru."' WHERE id='".$id."'";
